@@ -1,0 +1,48 @@
+@import './fonts';
+
+$primaryFamilyFont: 'Parisienne', cursive;
+$secondFamilyFont:  'Playfair Display', serif;
+
+
+$palette: (
+  'color1': #F9FAF5,
+  'color2': #7D735D,
+  'color3': #BAA67C,
+  'color4': #E6C6A3,
+  'color5': #AF8566,
+  'color9': #E5E9D0,
+  'color6': #A86B1D,
+  'color7': #F7E586,
+  'color8': #E6B64B,
+);
+
+@function color($name) {
+  @return map-get($map: $palette, $key: $name)
+};
+
+
+@mixin custom-shadow ($dp) {
+
+  @if $dp==0 {
+    box-shadow: none
+  }
+  @else if $dp==1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+
+  @else if $dp==2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+  @else if $dp==3 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+
+  @else if $dp==4 {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  @else if $dp==5 {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+}
